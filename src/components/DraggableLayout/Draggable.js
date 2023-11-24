@@ -8,11 +8,11 @@ const Draggable = ({ id, children, onDragStart, onDragEnd, draggable }) => {
       style={{ opacity: 0.999 }}
       onDragStart={(e) => {
         //console.log(e);
-        e.currentTarget.classList.add('column-layout-dragging-element');
+        e.currentTarget.classList.add('draggable-layout-dragging-element');
         if (onDragStart) onDragStart({ ...e, id });
       }}
       onDragEnd={(e) => {
-        e.currentTarget.classList.remove('column-layout-dragging-element');
+        e.currentTarget.classList.remove('draggable-layout-dragging-element');
         if (onDragEnd) onDragEnd({ ...e, id });
       }}
     >

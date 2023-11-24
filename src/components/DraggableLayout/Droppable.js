@@ -25,8 +25,8 @@ const Droppable = ({ col, beforeComponent, lastInColumn, onDrop }) => {
       }}
     >
       {isDragOver ? (
-        <div className='column-layout-droppable-transition' style={{ height: '100%', pointerEvents: 'none', padding: '5px 0' }}>
-          <div className='column-layout-blinking' style={{ border: '2px dotted #aaaaaa', borderRadius: '10px', height: 'calc(100% - 15px)', backgroundColor: '#eeeeee' }} />
+        <div className='draggable-layout-droppable-transition' style={{ height: '100%', pointerEvents: 'none', padding: '5px 0' }}>
+          <div className='draggable-layout-blinking' style={{ border: '2px dotted #aaaaaa', borderRadius: '10px', height: 'calc(100% - 15px)', backgroundColor: '#eeeeee' }} />
         </div>
       ) : null}
     </div>

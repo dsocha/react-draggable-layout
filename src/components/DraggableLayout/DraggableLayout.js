@@ -55,7 +55,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
             <Fragment>
               <Droppable col={x.col} beforeComponent={x.id} onDrop={handleOnDrop} />
               <Draggable draggable={draggable} id={x.id} onDragStart={handleOnDragStart} onDragEnd={handleOnDragEnd}>
-                {x.id === draggingElementState ? <div className='column-layout-draggable-transition'>{x.component}</div> : <Fragment>{x.component}</Fragment>}
+                {x.id === draggingElementState ? <div className='draggable-layout-draggable-transition'>{x.component}</div> : <Fragment>{x.component}</Fragment>}
               </Draggable>
             </Fragment>
           );
@@ -123,7 +123,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
     const result = [];
     for (const colIndex in columnsComponents) {
       result.push(
-        <div className={colIndex.toString() === mainColumnIndex?.toString() ? 'column-layout-column-master' : 'column-layout-column-regular'} key={key++}>
+        <div className={colIndex.toString() === mainColumnIndex?.toString() ? 'draggable-layout-column-master' : 'draggable-layout-column-regular'} key={key++}>
           {columnsComponents[colIndex]}
         </div>
       );
@@ -135,7 +135,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
 
   return (
     <Styles>
-      <div id='column-layout-container' className='column-layout-container'>
+      <div id='draggable-layout-container' className='draggable-layout-container'>
         {getColumnsWithComponents()}
       </div>
     </Styles>
