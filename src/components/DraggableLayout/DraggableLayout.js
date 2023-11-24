@@ -50,9 +50,9 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
     for (let colIndex in colsComponents) {
       const oneColComponents = localConponents
         .filter((x) => x.id && x.col?.toString() === colIndex.toString()) // array indexes are strings in JS
-        .map((x) => {
+        .map((x, i) => {
           return (
-            <Fragment>
+            <Fragment key={i}>
               <Droppable col={x.col} beforeComponent={x.id} onDrop={handleOnDrop} />
               <Draggable draggable={draggable} id={x.id} onDragStart={handleOnDragStart} onDragEnd={handleOnDragEnd}>
                 {x.id === draggingElementState ? <div className='draggable-layout-draggable-transition'>{x.component}</div> : <Fragment>{x.component}</Fragment>}
@@ -140,6 +140,29 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
       </div>
     </Styles>
   );
+};
+
+DraggableLayout.propTypes = {
+  /**
+   An array of components that you want to place into DraggableLayout. 
+   */
+  components: PropTypes.array.isRequired,
+  /**
+   Number of columns in the layout.
+   */
+  columns: PropTypes.number.isRequired,
+  /**
+   Number of columns in the layout.
+   */
+  onChange: PropTypes.func,
+  /**
+   Index of the main column. The main column is wider than others.
+   */
+  mainColumnIndex: PropTypes.number,
+  /**
+   Set false if you want to disable drag and drop.
+   */
+  draggable: PropTypes.bool,
 };
 
 export default DraggableLayout;
