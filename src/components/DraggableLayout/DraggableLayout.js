@@ -1,6 +1,5 @@
 import Styles from './DraggableLayout.styles';
 import React, { useState, useEffect, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
 
@@ -140,29 +139,6 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
       </div>
     </Styles>
   );
-};
-
-DraggableLayout.propTypes = {
-  /**
-   An array of components that you want to place into DraggableLayout. 
-   */
-  components: PropTypes.array.isRequired,
-  /**
-   Number of columns in the layout.
-   */
-  columns: PropTypes.number.isRequired,
-  /**
-   Number of columns in the layout.
-   */
-  onChange: PropTypes.func,
-  /**
-   Index of the main column. The main column is wider than others.
-   */
-  mainColumnIndex: PropTypes.number,
-  /**
-   Set false if you want to disable drag and drop.
-   */
-  draggable: PropTypes.bool,
 };
 
 export default DraggableLayout;
