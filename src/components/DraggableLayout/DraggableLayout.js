@@ -97,7 +97,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
     }
 
     setLocalConponents(result);
-    onChange(result);
+    if (onChange) onChange(result);
   };
 
   //#region "Drag and Drop"
