@@ -6,7 +6,7 @@ const Droppable = ({ col, beforeComponent, lastInColumn, onDrop }) => {
   return (
     <div
       id={self.crypto.randomUUID()}
-      style={{ width: '100%', flex: lastInColumn ? 'auto' : null, minHeight: isDragOver ? '120px' : '10px' }}
+      style={{ width: '100%', flex: lastInColumn ? 'auto' : null, height: isDragOver ? '120px' : '10px' }}
       onDragEnter={(e) => {
         e.preventDefault();
         setIsDragOver(true);

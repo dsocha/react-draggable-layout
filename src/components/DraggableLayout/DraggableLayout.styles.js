@@ -50,7 +50,7 @@ const Styles = styled.div`
 
   @keyframes draggable-layout-blinking-anim {
     50% {
-      opacity: 0.3;
+      opacity: 0.5;
     }
   }
 
