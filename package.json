@@ -1,0 +1,19 @@
+{
+  "name": "react-draggable-layout",
+  "version": "1.0.0",
+  "description": "a draggable React.js layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsocha/react-draggable-layout.git"
+  },
+  "author": "Dariusz Socha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dsocha/react-draggable-layout/issues"
+  },
+  "homepage": "https://github.com/dsocha/react-draggable-layout#readme"
+}
