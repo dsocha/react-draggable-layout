@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 
 const Droppable = ({ col, beforeComponent, lastInColumn, onDrop }) => {
   const [isDragOver, setIsDragOver] = useState(false);
 
   return (
     <div
-      id={uuid()}
+      id={self.crypto.randomUUID()}
       style={{ width: '100%', flex: lastInColumn ? 'auto' : null, minHeight: isDragOver ? '120px' : '10px' }}
       onDragEnter={(e) => {
         e.preventDefault();

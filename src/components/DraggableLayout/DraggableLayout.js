@@ -2,7 +2,6 @@ import './DraggableLayout.css';
 import React, { useState, useEffect } from 'react';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
-import { v4 as uuid } from 'uuid';
 
 let draggingElement = null;
 
@@ -30,7 +29,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
   const assignIds = (c) => {
     if (!Array.isArray(c)) return null;
     const result = [...c].map((x, i) => {
-      if (!x.id) x.id = uuid();
+      if (!x.id) x.id = self.crypto.randomUUID();
       return x;
     });
     return result;
