@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-layout",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "a draggable React.js layout",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -52,5 +52,14 @@
     "eslint-plugin-standard": "^5.0.0",
     "microbundle-crl": "^0.13.11",
     "prettier": "^2.8.1"
-  }
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "layout",
+    "columns",
+    "drag and drop",
+    "draggable",
+    "component"
+  ]
 }
