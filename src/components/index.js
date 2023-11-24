@@ -1,2 +1,2 @@
-import DraggableLayout from './DraggableLayout/DraggableLayout';
-export default DraggableLayout;
+import DraggableLayout1 from './DraggableLayout/DraggableLayout';
+export const DraggableLayout = DraggableLayout1;

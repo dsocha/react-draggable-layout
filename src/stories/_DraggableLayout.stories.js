@@ -1,5 +1,4 @@
 import DraggableLayout from '../components/DraggableLayout/DraggableLayout';
-import '../components/DraggableLayout/DraggableLayout.css';
 
 //👇 This default export determines where your story goes in the story list
 export default {

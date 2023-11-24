@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-layout",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "a draggable React.js layout",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/dsocha/react-draggable-layout#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "prop-types": "^15.8.1",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",

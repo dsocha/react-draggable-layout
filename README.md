@@ -55,7 +55,7 @@ export default App;
     - **col** - an index of column where you want to place your component
     - **component** - a component you want to place
 - **onChange**
-  - An event that is fired when a user draggs component to another place.
+  - An event that is fired when a user draggs the component to another place.
 - **columns**
   - Number of columns in the layout.
 - **mainColumnIndex**

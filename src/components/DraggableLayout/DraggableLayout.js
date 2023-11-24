@@ -1,5 +1,6 @@
-import './DraggableLayout.css';
-import React, { useState, useEffect } from 'react';
+import Styles from './DraggableLayout.styles';
+import React, { useState, useEffect, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
 
@@ -51,12 +52,12 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
         .filter((x) => x.id && x.col?.toString() === colIndex.toString()) // array indexes are strings in JS
         .map((x) => {
           return (
-            <>
+            <Fragment>
               <Droppable col={x.col} beforeComponent={x.id} onDrop={handleOnDrop} />
               <Draggable draggable={draggable} id={x.id} onDragStart={handleOnDragStart} onDragEnd={handleOnDragEnd}>
-                {x.id === draggingElementState ? <div className='column-layout-draggable-transition'>{x.component}</div> : <>{x.component}</>}
+                {x.id === draggingElementState ? <div className='column-layout-draggable-transition'>{x.component}</div> : <Fragment>{x.component}</Fragment>}
               </Draggable>
-            </>
+            </Fragment>
           );
         });
       oneColComponents.push(<Droppable col={parseInt(colIndex)} beforeComponent={null} onDrop={handleOnDrop} lastInColumn={true} />);
@@ -133,9 +134,11 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
   //#endregion
 
   return (
-    <div id='column-layout-containe' className='column-layout-container'>
-      {getColumnsWithComponents()}
-    </div>
+    <Styles>
+      <div id='column-layout-container' className='column-layout-container'>
+        {getColumnsWithComponents()}
+      </div>
+    </Styles>
   );
 };
 
