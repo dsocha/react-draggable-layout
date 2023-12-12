@@ -71,10 +71,11 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
     toBeMoved = { ...toBeMoved, col: toCol };
     let lc = sortComponents([...localConponents].filter((x) => x.id !== id));
     let result = [];
-    if (before && before === id) {
+    if (lc.length === 0) {
+      result.push(toBeMoved);
+    } else if (before && before === id) {
       return;
-    }
-    if (before) {
+    } else if (before) {
       for (const item of lc) {
         if (item.id === before) {
           result.push(toBeMoved, item);
@@ -82,8 +83,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
           result.push(item);
         }
       }
-    }
-    if (!before) {
+    } else if (!before) {
       for (const index in lc) {
         const indexPlus1 = (Number.parseInt(index) + 1).toString(); // array indexes are strings in JS
         if (index === '0' && (!lc[indexPlus1] || lc[indexPlus1]?.col > toCol)) {
