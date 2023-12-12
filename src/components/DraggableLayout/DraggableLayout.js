@@ -18,7 +18,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
     if (!Array.isArray(components)) return;
     setLocalConponents(sortComponents(assignIds(components)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [components]);
 
   useEffect(() => {
     if (!localConponents) return;
