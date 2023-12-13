@@ -5,7 +5,7 @@ import Droppable from './Droppable';
 
 let draggingElement = null;
 
-const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, draggable = true }) => {
+const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, draggable = true, isDarkMode = false }) => {
   const [localConponents, setLocalConponents] = useState(components);
   const [columnsComponents, setColumnsComponents] = useState([]);
   const [draggingElementState, setDraggingElementState] = useState(null);
@@ -52,14 +52,14 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
         .map((x, i) => {
           return (
             <Fragment key={i}>
-              <Droppable col={x.col} beforeComponent={x.id} onDrop={handleOnDrop} />
+              <Droppable col={x.col} beforeComponent={x.id} onDrop={handleOnDrop} isDarkMode={isDarkMode} />
               <Draggable draggable={draggable} id={x.id} onDragStart={handleOnDragStart} onDragEnd={handleOnDragEnd}>
                 {x.id === draggingElementState ? <div className='draggable-layout-draggable-transition'>{x.component}</div> : <Fragment>{x.component}</Fragment>}
               </Draggable>
             </Fragment>
           );
         });
-      oneColComponents.push(<Droppable col={parseInt(colIndex)} beforeComponent={null} onDrop={handleOnDrop} lastInColumn={true} />);
+      oneColComponents.push(<Droppable col={parseInt(colIndex)} beforeComponent={null} onDrop={handleOnDrop} lastInColumn={true} isDarkMode={isDarkMode} />);
       colsComponents[colIndex] = oneColComponents;
     }
     setColumnsComponents(colsComponents);

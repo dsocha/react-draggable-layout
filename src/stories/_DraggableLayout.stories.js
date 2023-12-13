@@ -20,6 +20,7 @@ const Template = (args) => (
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
+  isDarkMode: false,
   columns: 3,
   mainColumnIndex: 1,
   draggable: true,

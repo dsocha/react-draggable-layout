@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Droppable = ({ col, beforeComponent, lastInColumn, onDrop }) => {
+const Droppable = ({ col, beforeComponent, lastInColumn, onDrop, isDarkMode }) => {
   const [isDragOver, setIsDragOver] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ const Droppable = ({ col, beforeComponent, lastInColumn, onDrop }) => {
     >
       {isDragOver ? (
         <div className='draggable-layout-droppable-transition' style={{ height: '100%', pointerEvents: 'none', padding: '5px 0' }}>
-          <div className='draggable-layout-blinking' style={{ border: '2px dotted #aaaaaa', borderRadius: '10px', height: 'calc(100% - 15px)', backgroundColor: '#eeeeee' }} />
+          <div className='draggable-layout-blinking' style={{ border: '2px dotted #aaaaaa', borderRadius: '10px', height: 'calc(100% - 15px)', backgroundColor: isDarkMode ? '#111111' : '#eeeeee' }} />
         </div>
       ) : null}
     </div>
