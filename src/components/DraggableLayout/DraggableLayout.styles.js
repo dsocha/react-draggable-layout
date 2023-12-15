@@ -45,12 +45,12 @@ const Styles = styled.div`
   }
 
   .draggable-layout-blinking {
-    animation: draggable-layout-blinking-anim 0.2s linear infinite;
+    animation: draggable-layout-blinking-anim 0.4s linear infinite;
   }
 
   @keyframes draggable-layout-blinking-anim {
     50% {
-      opacity: 0.5;
+      opacity: 0.7;
     }
   }
 

@@ -12,7 +12,7 @@ export default {
 
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
-  <div style={{ width: '100%', height: '100vh' }}>
+  <div style={{ width: '100%', height: '100vh', backgroundColor: args.isDarkMode ? '#000000' : '#ffffff' }}>
     <DraggableLayout {...args} />
   </div>
 );
