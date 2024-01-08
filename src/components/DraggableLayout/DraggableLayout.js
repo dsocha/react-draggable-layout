@@ -49,9 +49,9 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
     for (let colIndex in colsComponents) {
       const oneColComponents = localConponents
         .filter((x) => x.id && x.col?.toString() === colIndex.toString()) // array indexes are strings in JS
-        .map((x, i) => {
+        .map((x) => {
           return (
-            <Fragment key={i}>
+            <Fragment key={self.crypto.randomUUID()}>
               <Droppable col={x.col} beforeComponent={x.id} onDrop={handleOnDrop} />
               <Draggable draggable={draggable} id={x.id} onDragStart={handleOnDragStart} onDragEnd={handleOnDragEnd}>
                 {x.id === draggingElementState ? <div className='draggable-layout-draggable-transition'>{x.component}</div> : <Fragment>{x.component}</Fragment>}
@@ -59,7 +59,7 @@ const DraggableLayout = ({ components, onChange, columns, mainColumnIndex, dragg
             </Fragment>
           );
         });
-      oneColComponents.push(<Droppable col={parseInt(colIndex)} beforeComponent={null} onDrop={handleOnDrop} lastInColumn={true} />);
+      oneColComponents.push(<Droppable key={self.crypto.randomUUID()} col={parseInt(colIndex)} beforeComponent={null} onDrop={handleOnDrop} lastInColumn={true} />);
       colsComponents[colIndex] = oneColComponents;
     }
     setColumnsComponents(colsComponents);
